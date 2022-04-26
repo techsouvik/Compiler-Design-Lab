@@ -1,15 +1,14 @@
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
 
-void main()
+void main(int argc, char *argv[])
 {
     char s[20],c;
     int state=0,i=0;
     //clrscr();
-    printf("\n Enter a string:");
-    gets(s);
+    // printf("\n Enter a string:");
+    strcpy(s, argv[1]);
     while(s[i]!='\0')
     {
         switch(state)

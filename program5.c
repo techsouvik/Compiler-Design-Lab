@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+// #include<conio.h>
 #include<string.h>
 
 char arr1[7][10] = { "S", "A", "A", "B", "B", "C", "C" };

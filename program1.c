@@ -1,13 +1,16 @@
 #include<stdio.h>
+#include<string.h>
 
-void main()
+int main(int argc, char *argv[])
 {
+    // printf("%d",argc);
+    // printf("%s",argv[0]);
+    // printf("%s",argv[1]);
     char com [30];
+    strcpy(com, argv[1]);
     int i=2,a=0;
 
-    printf("\n Enter Text : ");
-
-    gets(com);
+    // printf("\n Enter Text : ");
     if(com[0]=='/')
     {
         if(com[1]=='/')
@@ -34,4 +37,6 @@ void main()
     }
     else
     printf("\n It is Not a Comment.");
+
+    return 0;
 }
