@@ -1,2 +1,4 @@
-gcc program1.c 
-./a.out hellosouvik
+
+            gcc program1.c 
+            ./a.out //hello
+    

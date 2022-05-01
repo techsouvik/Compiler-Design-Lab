@@ -35,7 +35,7 @@ int subh (char c)
   return (2);
 }
 
-void main ()
+int main ()
 {
   int i, j, k;
   printf ("\nPredictive parsing table\n");
@@ -78,4 +78,6 @@ void main ()
 	if (j == 5)
 	  printf("\n--------------------------------------------------------\n");
     }
+
+  return 0;
 }

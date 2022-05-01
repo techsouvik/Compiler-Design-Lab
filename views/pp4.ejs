@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/assets/css/style2.css">
+     <title>Program 4</title>
+     
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+<body>
+     <main class="main col-lg" style="max-width: 1000px;">
+      <div class="container">
+        <h1 class="mt-5" id="abhi1">Aim:- </h1>
+        <p class="lead">To design an online simulator to derive leftmost derivation tree and rightmost derivation tree from a given grammar for a goal string.</p>
+        
+      </div>
+
+      <div class="container">
+        <h1 class="mt-5" id="abhi2">Theory:- </h1>
+        <p class="lead">The process of deriving a string is called as derivation. The geometrical representation of a derivation is called as a parse tree or derivation tree.</p>
+        <p class="lead">Properties Of Parse Tree-</p>
+        <ul class="lead">
+          <li>
+              <p class="lead">Root node of a parse tree is the start symbol of the grammar.</p>
+          </li>
+          <li>
+              <p class="lead">Each leaf node of a parse tree represents a terminal symbol.</p>
+          </li>
+          <li>
+            <p class="lead">•	Each interior node of a parse tree represents a non-terminal symbol.</p>
+        </li>
+      </ul>
+      <br><br>
+      <img src="/assets/img/p41.jpg" alt="">
+      <br><br><br><br>
+      <ul class="lead">
+        <li>
+            <p class="lead">Leftmost Derivation:</p>
+            <p class="lead">The process of deriving a string by expanding the leftmost non-terminal at each step is called as leftmost derivation.</p>
+        </li>
+        <li>
+            <p class="lead">Rightmost Derivation:</p>
+            <p class="lead">The process of deriving a string by expanding the rightmost non-terminal at each step is called as rightmost derivation</p>
+        </li>
+    </ul>
+
+      </div>
+
+
+      <div class="container">
+        <h1 class="mt-5" id="abhi3">Input/Output Examples:- </h1>
+        <p class="lead">Consider the following Grammer:.</p>
+        <img src="/assets/img/p42.jpg" alt="">
+        <br><br><br>
+        <p class="lead">Left Derivation:</p>
+        <img src="/assets/img/p43.jpg" alt="">
+        <br><p class="lead">Right Derivation:</p>
+        <img src="/assets/img/p44.jpg" alt="">
+      </div>
+
+
+      <div class="container">
+        <h1 class="mt-5" id="abhi4">Online Simulator:- </h1>
+        
+        <p class="lead">Click on this <a href="/p4.html">Link</a> to go to the Online Simulator.</p>
+      </div>
+
+      <div class="container">
+        <h1 class="mt-5" id="abhi5">Discussion:- </h1>
+        <p class="lead">We wrote the online simulator using HTML, CSS, JavaScript and successfully implemented the concept of left and right derivation tree.</p>
+      </div>
+
+      <div class="container">
+        <h1 class="mt-5" id="abhi6">Source of Error &amp; Error Recovery:- </h1>
+        <p class="lead">If the grammar is ambiguous i.e., if there exist more than one left or right derivations for the same string.
+          For an ambiguous grammar left and right derivation tree of a given grammar may yield different results.  
+          .</p>
+      </div>
+      <div class="groupRow">
+      <a href="/"><button class="btn">Back to Home</button></a>
+    </div>
+      </main>
+</body>
+       <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>

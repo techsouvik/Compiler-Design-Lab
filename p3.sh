@@ -1,2 +1,4 @@
-gcc program3.c 
-./a.out //hellosouvik
+
+            gcc program3.c 
+            ./a.out jsadksaj
+    

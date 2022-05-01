@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: linear-gradient(to right top, #040409, #090526);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 10vh 0;
+}
+
+
+.main{
+  width: calc(100vw / 2 + 25px);
+  height: 100%;
+  max-width: 410px;
+  min-width: 290px;
+  min-heigth: calc(100vh - 20vh);
+  background: #ddd;
+  padding: 24px 24px;
+  border-radius: 5px;
+  padding-bottom: 32px;
+  position: relative;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .login{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main .login h1{
+font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.8px;
+  font-size: 26px;
+  color: #111;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.main .group{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main input{
+  width: 100%;
+  height: 46px;
+  background: #090526;
+  border-radius: 4px;
+  border: unset;
+  padding-left: 15px;
+  color: #ddd;
+}
+
+.main input:focus{
+  outline: 2px solid #6204BF
+}
+
+.main input::placeholder{
+  color: #aaa;
+}
+
+.main a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: #6204BF;
+  margin-top: 0px;
+    transition: 250ms linear;
+}
+
+.main a:hover{
+  color: #6204BFcd;
+    text-decoration: underline;
+}
+
+.main .btn{
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background: #6204BF;
+  color: #dedede;
+  text-transform: uppercase;
+font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: 250ms linear;
+  font-size: 16px;
+}
+
+.main .btn:hover{
+  background: #6204BFdd;
+}
+
+.main .row{
+  display: flex;
+  width: 100%;
+  height: 6px;
+  position: relative;
+  margin: 8px 0;
+}
+
+.main .row::before,
+.main .row::after{
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  width: calc(50% - 3px);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background: linear-gradient(to right, #090526dd, rgba(0,0,50,0.3));
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.main .row::after{
+  left: unset;
+    right: 0;
+  background: linear-gradient(to left, #090526dd, rgba(0,0,50,0.3))
+}
+
+.main .login .groupRow{
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  width: 100%;
+  color: #444;
+  font-size: 14px;
+}
+
+.main .groupRow .btn-github{
+  background: #333;
+  color: #f5f5f5;
+  stroke: f5f5f5;
+  width: 180px;
+  height: 44px;
+  border: unset;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.icon{
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+  z-index: 300;
+}
+
+.icon::before{
+  content: "";
+   width: 45px;
+  height: 45px;
+  background: linear-gradient(to bottom right, #6503A6, #6204BF, #260273, #120540, #090526);
+  display: block;
+  border-radius:50%;
+   box-shadow: -2px -2px 6px rgba(0,0,0,0.23), 2px 2px 4px #6204BF9f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon::after{
+  content: "";
+  width: 100%;
+  height: 50%;
+  background: #6204BF44;
+  display: block;
+  z-index: 500;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  border-radius: 0px 0px 12px 12px;
+}

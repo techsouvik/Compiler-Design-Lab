@@ -1,18 +1,20 @@
 #include<stdio.h>
 // #include<conio.h>
 #include<ctype.h>
+#include<string.h>
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-    char a[10];
+    char a[100];
     int flag, i=1;
     //clrscr();
-    printf("\n Enter an identifier:");
+    // printf("\n Enter an identifier:");
     strcpy(a, argv[1]);
     if(isalpha(a[0]))
-    flag=1;
+        flag=1;
     else
-    printf("\n Not a valid identifier");
+        printf("\n Not a valid identifier");
+    
     while(a[i]!='\0')
     {
 
@@ -23,8 +25,11 @@ void main(int argc, char *argv[])
         }
         i++;
     }
+    
     if(flag==1)
-    printf("\n Valid identifier");
-    getch();
+        printf("\n Valid identifier");
+    // getch();
+
+    return 0;
 
 }
