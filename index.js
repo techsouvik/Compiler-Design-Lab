@@ -54,13 +54,6 @@ app.post('/s.html',(req,res)=>{
     res.render('s',{data:req.body})
 })
 
-
-app.post('/prg1',(req,res)=>{
-
-    write(req.body.content, req.body.n)
-    res.render('s',{data:stdout, n:req.body.n})
-});
-
 app.post('/prg',(req,res)=>{
 
     exec(`gcc program${req.body.n}.c  && ./a.out ${req.body.content}`,(error,stdout,stderr)=>{
