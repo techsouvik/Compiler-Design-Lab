@@ -73,7 +73,7 @@ const write = (data , n)=>{
 app.post('/prg',(req,res)=>{
 
     write(req.body.content, req.body.n)
-    exec(`chnod +x p${req.body.n}.sh`,(err,stdout,stderr)=>{
+    exec(`chmod +x p${req.body.n}.sh`,(err,stdout,stderr)=>{
         if(err)
             console.log(err)
         else
