@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyparser = require('body-parser')
-const { execFile } = require('child_process')
+const { execFile, exec } = require('child_process')
 const fs = require('fs')
 
 const app = express()
@@ -73,6 +73,12 @@ const write = (data , n)=>{
 app.post('/prg',(req,res)=>{
 
     write(req.body.content, req.body.n)
+    exec(`chnod +x p${req.body.n}.sh`,(err,stdout,stderr)=>{
+        if(err)
+            console.log(err)
+        else
+            res.send(stdout)
+    })
     execFile(`./p${req.body.n}.sh`, (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`)
