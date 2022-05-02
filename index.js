@@ -53,40 +53,18 @@ app.get('/pp5.html',(req,res)=>{
 app.post('/s.html',(req,res)=>{
     res.render('s',{data:req.body})
 })
-const write = (data , n)=>{
-
-    const content = `
-            gcc program${n}.c 
-            ./a.out ${data}
-    `
-
-     fs.writeFile(`./p${n}.sh`, content, err => {
-       if (err) {
-         console.error(err)
-         return
-       }
-       //file written successfully
-     })
-}
 
 
-app.post('/prg',(req,res)=>{
+app.post('/prg1',(req,res)=>{
 
     write(req.body.content, req.body.n)
     res.render('s',{data:stdout, n:req.body.n})
 });
 
-app.post('/prg1',(req,res)=>{
+app.post('/prg',(req,res)=>{
 
-    write(req.body.content, req.body.n)
-    exec(`chmod +x p${req.body.n}.sh`,(err,stdout,stderr)=>{
-        if(err)
-            console.log(err)
-        else
-            res.send(stdout)
-    })
-    execFile(`./p${req.body.n}.sh`, (error, stdout, stderr) => {
-    if (error) {
+    exec(`gcc program${req.body.n}.c  && ./a.out ${req.body.content}`,(error,stdout,stderr)=>{
+        if (error) {
         console.log(`error: ${error.message}`)
         return
     }
@@ -96,7 +74,7 @@ app.post('/prg1',(req,res)=>{
     }
     console.log(`stdout: ${stdout}`);
     res.render('s',{data:stdout, n:req.body.n})
-    });
+    })
 })
 
 app.listen(port, () => {
