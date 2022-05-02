@@ -71,6 +71,12 @@ const write = (data , n)=>{
 
 
 app.post('/prg',(req,res)=>{
+    
+    write(req.body.content, req.body.n)
+    res.render('s',{data:stdout, n:req.body.n})
+});
+
+app.post('/prg1',(req,res)=>{
 
     write(req.body.content, req.body.n)
     exec(`chmod +x p${req.body.n}.sh`,(err,stdout,stderr)=>{
@@ -92,7 +98,6 @@ app.post('/prg',(req,res)=>{
     res.render('s',{data:stdout, n:req.body.n})
     });
 })
-
 
 app.listen(port, () => {
     console.log(`SERVER IS RUNNING ON PORT ${port}`);

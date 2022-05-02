@@ -71,5 +71,5 @@ void main(int argc, char *argv[])
     printf("\n %s is accepted under rule 'a*b+'",s);
     else if(state==5)
     printf("\n %s is accepted under rule 'abb'",s);
-    getch();
+    // getch());
 }
