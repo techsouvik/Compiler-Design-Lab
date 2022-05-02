@@ -4,7 +4,7 @@ const { execFile, exec } = require('child_process')
 const fs = require('fs')
 
 const app = express()
-port = process.env.PORT || 3000
+port = process.env.PORT || 8080
 
 app.use(express.static('public'))
 app.use(express.json()) 
@@ -71,7 +71,7 @@ const write = (data , n)=>{
 
 
 app.post('/prg',(req,res)=>{
-    
+
     write(req.body.content, req.body.n)
     res.render('s',{data:stdout, n:req.body.n})
 });
