@@ -13,83 +13,51 @@
 
 </head>
 <body>
-
-     <main class="main col-lg" style="max-width: 1000px;">
-      <div class="container">
-        <h1 class="mt-5">Aim:- </h1>
-        <p class="lead">To design an online simulator that checks whether a given input string (program snippet) is a single/multi-comment or not a comment.</p>
-        
+  <main class="main col-lg" style="max-width: 1000px;">
+     <div class="container">
+        <h1 class="mt-5" id="abhi1">Aim:- </h1>
+        <p class="lead">To design an online simulator that implements a  Parser for the given grammar.</p>
       </div>
 
       <div class="container">
-        <h1 class="mt-5">Theory:- </h1>
-        <p class="lead">Given a string, representing a program snippet, the task is to check if the given string is a single/multi-line comment or not a comment.</p>
-        <p class="lead">Types of Comment: </p>
-        <ul class="lead">
-          <li>
-              <p class="lead">Single Line Comment: </p>
-              <p class="lead">Comments preceded by a Double Slash (‘//’)</p>
-          </li>
-          <li>
-              <p class="lead">Multi-line Comment: </p>
-              <p class="lead">Comments starting with (‘/*’) and ending with (‘*/’).</p>
-          </li>
-      </ul>
-      <p class="lead">Check if at the first Index(i.e. index 0) the value is ‘/’ then follow below steps else print “It is not a comment”.</p>
-      <ul class="lead">
-        <li>
-            <p class="lead">If line[0] == ‘/’: </p>
-            <p class="lead">o	If line[1] == ‘/’, then print “It is a single line comment”.</p>
-             <p class="lead"> o	If line[1] == ‘*’, then traverse the string and if any adjacent pair of ‘*’ &amp; ‘/’ is found then print “It is a multi-line comment”.
-              </p>
-        </li>
-        <li>
-            <p class="lead">Otherwise, print “It is not a comment”.</p>
-        </li>
-    </ul>
+        <h1 class="mt-5" id="abhi2">Theory:- </h1>
+        <p class="lead">A parser generator is a good tool that you should make part of your toolbox. A parser generator takes a grammar as input and automatically generates source code that can parse streams of characters using the grammar.</p>
+        <p class="lead">The generated code is a parser, which takes a sequence of characters and tries to match the sequence against the grammar. The parser typically produces a parse tree, which shows how grammar productions are expanded into a sentence that matches the character sequence. The root of the parse tree is the starting nonterminal of the grammar. Each node of the parse tree expands into one production of the grammar. We’ll see how a parse tree actually looks in the next section.</p>
+        <p class="lead">The final step of parsing is to do something useful with this parse tree. We are going to translate it into a value of a recursive data type. Recursive abstract data types are often used to represent an expression in a language, like HTML, or Markdown, or Java, or algebraic expressions. A recursive abstract data type that represents a language expression is called an abstract syntax tree (AST).</p>
       </div>
 
 
       <div class="container">
-        <h1 class="mt-5">Input/Output Examples:- </h1>
-        <ul class="lead">
-          <li>
-              <p class="lead">Input: line = “/* Comment */” </p>
-              <p class="lead">Output: It is a multi-line comment</p>
-          </li>
-          <li>
-              <p class="lead">Input: line = “// Comment ” </p>
-              <p class="lead">Output: It is a single-line comment</p>
-          </li>
-      </ul>
+        <h1 class="mt-5" id="abhi3">Input/Output Examples:- </h1>
+        <p class="lead">Let us take an example of a Grammar (Production Rules).</p>
+        <p>S -&gt; sAB</p>
+        <p>A -&gt; a</p>
+        <p>B -&gt; b</p>
+        <p class="lead">The input string is “sab”, then the Parse Tree is :</p>
+        <br>
+        <img src="/assets/img/p51.jpg" alt="">
       </div>
 
 
       <div class="container">
-        <h1 class="mt-5">Online Simulator:- </h1>
+        <h1 class="mt-5" id="abhi4">Online Simulator:- </h1>
         
         <p class="lead">Click on this <a href="/p5.html">Link</a> to go to the Online Simulator.</p>
       </div>
 
       <div class="container">
-        <h1 class="mt-5">Discussion:- </h1>
-        <p class="lead">We wrote the online simulator using C programming language and integrated it with the website designed using HTML, CSS, JavaScript. The simulator takes a string as input and checks whether it is a single/multi-line comment or not a comment.</p>
+        <h1 class="mt-5" id="abhi5">Discussion:- </h1>
+        <p class="lead">We wrote the online simulator using C programming language and integrated it with the website designed using HTML, CSS, JavaScript. The simulator takes a Grammar(Production  Rules) as user input and generate the corresponding parse trees according to the grammar/ production rules.</p>
       </div>
 
       <div class="container">
-        <h1 class="mt-5">Source of Error &amp; Error Recovery:- </h1>
-        <p class="lead">There can be two possible sources of error for this string in the program snippet:</p>
-        <ul class="lead">
-          <li>
-              <p class="lead">Unterminated Multi-Line Comments: </p>
-              <p class="lead">It occurs when we do not terminate the comment with a valid set of characters (here the red-coloured */). Single line comment does not need to terminate, and it starts by a double slash (//), but, multi-line comment needs to be terminated by */ (asterisk and slash). If a multi-line comment is not terminated properly, then during lexical analysis phase of the compiler, the compiler will consider everything after start of the multi-line comment as a comment and ignore them during tokenization (traversing the program from left to right line-by-line and breaking them down into tokens or logical units of a program).</p>
-          </li>
-          <li>
-              <p class="lead">Nested Multi-Line Comments:</p>
-              <p class="lead">In C, multi-line comments, /* and */, do not nest ie, if we want to write a nested comment (comment within comment), the compiler during lexical analysis phase will consider the first /* as start of multi-line comment and ignore the second /* syntax as it has still not got an end for the first comment “*/”. So, the multi-line comment will end after the first */ (red coloured). After that, the rest of the comment will not be ignored and will be considered during tokenization until it again gets a start of comment line again.</p>
-          </li>
-      </ul>
+        <h1 class="mt-5" id="abhi6">Source of Error &amp; Error Recovery:- </h1>
+        <p class="lead">By default, Antlr parsers print errors to the console. In order to make the parser modular, however, we need to handle those errors differently. You can attach an ErrorListener to the lexer and parser in order to throw an exception when an error is encountered during parsing. The Sum.g4 file defines a method reportErrorsAsExceptions() which does this. So if you copy the technique used in this grammar file, you can call:</p>
+        <p>lexer.reportErrorsAsExceptions();</p>
+        <p>parser.reportErrorsAsExceptions();</p>
+        <p class="lead">right after you create the lexer and parser. Then when you call parser.root(), it will throw an exception as soon as it encounters something that it can’t match.</p>
       </div>
+
       <div class="groupRow">
       <a href="/"><button class="btn">Back to Home</button></a>
     </div>

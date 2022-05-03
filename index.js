@@ -56,6 +56,21 @@ app.post('/s.html',(req,res)=>{
 
 app.post('/prg',(req,res)=>{
 
+    if(req.body.n == 2){
+        exec(`gcc program${req.body.n}.c  && ./a.out '${req.body.content}'`,(error,stdout,stderr)=>{
+        if (error) {
+        console.log(`error: ${error.message}`)
+        return
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`)
+        return
+    }
+    console.log(`stdout: ${stdout}`);
+    res.render('s',{data:stdout, n:req.body.n})
+    })
+    }
+    else{
     exec(`gcc program${req.body.n}.c  && ./a.out ${req.body.content}`,(error,stdout,stderr)=>{
         if (error) {
         console.log(`error: ${error.message}`)
@@ -68,6 +83,7 @@ app.post('/prg',(req,res)=>{
     console.log(`stdout: ${stdout}`);
     res.render('s',{data:stdout, n:req.body.n})
     })
+    }
 })
 
 app.listen(port, () => {

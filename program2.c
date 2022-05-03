@@ -1,75 +1,78 @@
-#include<stdio.h>
+#include <stdio.h>
 #include<string.h>
-#include<stdlib.h>
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-    char s[20],c;
-    int state=0,i=0;
-    //clrscr();
-    // printf("\n Enter a string:");
+char s[20];
     strcpy(s, argv[1]);
-    while(s[i]!='\0')
+    switch (s[0])
     {
-        switch(state)
+    case '>':
+        if (s[1] == '=')
         {
-            case 0: c=s[i++];
-            if(c=='a')
-            state=1;
-            else if(c=='b')
-            state=2;
-            else
-            state=6;
-            break;
-            case 1: c=s[i++];
-            if(c=='a')
-            state=3;
-            else if(c=='b')
-            state=4;
-            else
-            state=6;
-            break;
-            case 2: c=s[i++];
-            if(c=='a')
-            state=6;
-            else if(c=='b')
-            state=2;
-            else
-            state=6;
-            break;
-            case 3: c=s[i++];
-            if(c=='a')
-            state=3;
-            else if(c=='b')
-            state=2;
-            else
-            state=6;
-            break;
-            case 4: c=s[i++];
-            if(c=='a')
-            state=6;
-            else if(c=='b')
-            state=5;
-            else
-            state=6;
-            break;
-            case 5: c=s[i++];
-            if(c=='a')
-            state=6;
-            else if(c=='b')
-            state=2;
-            else
-            state=6;
-            break;
-            case 6: printf("\n %s is not recognised.",s);
-            exit(0);
+            printf("\n Greater than or equal.\n\n");
+        } 
+        else
+        {
+            printf("\n Greater than.\n\n");
+} break;
+    case '<':
+        if (s[1] == '=')
+        {
+            printf("\n Less than or equal.\n\n");
+} else {
+            printf("\n Less than.\n\n");
         }
+break;
+    case '=':
+        if (s[1] == '=')
+        {
+            printf("\n Equal to operator.\n\n");
+} else {
+            printf("\n Assignment operator.\n\n");
+        }
+break;
+    case '&':
+        if (s[1] == '&')
+{
+            printf("\n Logical AND.\n\n");
+} else
+        {
+            printf("\n Bitwise AND.\n\n");
+} break;
+    case '|':
+        if (s[1] == '|')
+        {
+            printf("\n Logical OR.\n\n");
+} else {
+            printf("\n Bitwise OR.\n\n");
+        }
+break;
+    case '!':
+        if (s[1] == '=')
+        {
+            printf("\n Not equal.\n\n");
+} else {
+            printf("\n Bitwise Not.\n\n");
+        }
+break;
+    case '+':
+        printf("\n Addition.\n\n");
+        break;
+    case '-':
+        printf("\n Subtraction.\n\n");
+        break;
+    case '*':
+        printf("\n Multiplication.\n\n");
+        break;
+    case '/':
+        printf("\n Division.\n\n");
+        break;
+    case '%':
+        printf("\n Modulus.\n\n");
+        break;
+default:
+        printf("\n Not a valid operator!!!\n\n");
     }
-    if(state==1)
-    printf("\n %s is accepted under rule 'a'",s);
-    else if((state==2)||(state==4))
-    printf("\n %s is accepted under rule 'a*b+'",s);
-    else if(state==5)
-    printf("\n %s is accepted under rule 'abb'",s);
-    // getch());
+    return 0;
 }
